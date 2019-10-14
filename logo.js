@@ -1,7 +1,6 @@
 'use strict';
 
 const figlet = require('figlet');
-const toTitleCase = require('to-title-case');
 const chalk = require('chalk');
 
 module.exports = options => {
@@ -46,7 +45,7 @@ module.exports = options => {
     }, []);
   }
 
-  const logoTextArray = textToLines(toTitleCase(name), lineChars || 15);
+  const logoTextArray = textToLines(name, lineChars || 15);
 
   const logoLines = logoTextArray.reduce((result, line) => {
     return result.concat( figlet.textSync(line, { font: font }).split('\n') );
